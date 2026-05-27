@@ -5,7 +5,7 @@ import tseslint from 'typescript-eslint';
 
 // Additional plugins
 import eslintPluginAstro from 'eslint-plugin-astro';
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+import eslintConfigPrettier from 'eslint-config-prettier';
 
 /** @type {import("typescript-eslint").Config} */
 export default defineConfig([
@@ -22,10 +22,5 @@ export default defineConfig([
   js.configs.recommended,
   ...tseslint.configs.recommended,
   ...eslintPluginAstro.configs.recommended,
-  eslintPluginPrettierRecommended,
-  {
-    rules: {
-      'prettier/prettier': 'warn',
-    },
-  },
+  eslintConfigPrettier,
 ]);

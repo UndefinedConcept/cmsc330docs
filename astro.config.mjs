@@ -2,10 +2,13 @@
 import starlight from '@astrojs/starlight';
 import { defineConfig } from 'astro/config';
 
+import tailwindcss from '@tailwindcss/vite';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://undefinedconcept.github.io',
   base: '/cmsc330docs',
+
   integrations: [
     starlight({
       title: 'My Docs',
@@ -25,4 +28,8 @@ export default defineConfig({
       ],
     }),
   ],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });

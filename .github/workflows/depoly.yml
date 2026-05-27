@@ -16,7 +16,6 @@ permissions:
 
 jobs:
   check:
-    name: Run npm checks
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
