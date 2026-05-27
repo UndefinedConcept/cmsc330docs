@@ -10,6 +10,10 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 /** @type {import("typescript-eslint").Config} */
 export default defineConfig([
   {
+    // Ignore generated/build output so linting focuses on source files.
+    ignores: ['.astro/**', 'dist/**', '.output/**', 'node_modules/**'],
+  },
+  {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,astro}'],
     plugins: { js },
     extends: ['js/recommended'],

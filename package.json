@@ -8,12 +8,21 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "check": "npm run check:astro && npm run check:eslint && npm run check:prettier",
+    "check:astro": "astro check",
+    "check:eslint": "eslint .",
+    "check:prettier": "prettier --check .",
+    "fix": "npm run fix:eslint && npm run fix:prettier",
+    "fix:eslint": "eslint --fix .",
+    "fix:prettier": "prettier -w .",
     "prepare": "husky install"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.9",
     "@astrojs/starlight": "^0.39.2",
     "astro": "^6.3.1",
-    "sharp": "^0.34.5"
+    "sharp": "^0.34.5",
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.0.1",
@@ -25,13 +34,20 @@
     "eslint-plugin-astro": "^1.7.0",
     "eslint-plugin-prettier": "^5.5.5",
     "globals": "^17.6.0",
+    "husky": "^8.0.0",
     "jiti": "^2.7.0",
     "lint-staged": "^16.4.0",
     "markdownlint-cli": "^0.48.0",
     "prettier": "^3.8.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-organize-imports": "^4.3.0",
-    "typescript-eslint": "^8.60.0",
-    "husky": "^8.0.0"
+    "typescript-eslint": "^8.60.0"
+  },
+  "lint-staged": {
+    "*.{js,mjs,cjs,ts,mts,cts,astro}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{md,mdx,json,yml,yaml,css,scss,html}": "prettier --write"
   }
 }
