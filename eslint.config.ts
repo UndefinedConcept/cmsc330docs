@@ -4,8 +4,8 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 // Additional plugins
-import eslintPluginAstro from 'eslint-plugin-astro';
 import eslintConfigPrettier from 'eslint-config-prettier';
+import eslintPluginAstro from 'eslint-plugin-astro';
 
 /** @type {import("typescript-eslint").Config} */
 export default defineConfig([
